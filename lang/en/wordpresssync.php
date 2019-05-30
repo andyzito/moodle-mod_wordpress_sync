@@ -17,27 +17,27 @@
 /**
  * Plugin strings are defined here.
  *
- * @package     mod_wordpress_sync
+ * @package     mod_wordpresssync
  * @category    string
  * @copyright   2018 Lafayette College
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die();
+// defined('MOODLE_INTERNAL') || die();
 
 $string['missingidandcmid'] = 'Missing id and cmid';
-$string['modulename'] = 'newmodule';
+$string['modulename'] = 'WordPress Sync';
 $string['modulename_help'] = 'Use the WordPress Sync module to let teachers provision WordPress sites automatically';
-$string['modulenameplural'] = 'wordpress_syncs';
-$string['newmodulefieldset'] = 'Custom example fieldset.';
-$string['newmodulename'] = 'newmodule name';
-$string['newmodulename_help'] = 'This is the content of the help tooltip associated with the newmodulename field';
-$string['newmodulesettings'] = 'Settings';
-$string['nonewmodules'] = 'No newmodules';
+$string['modulenameplural'] = 'WordPress Syncs';
+// $string['newmodulefieldset'] = 'Custom example fieldset.';
+// $string['newmodulename'] = 'newmodule name';
+// $string['newmodulename_help'] = 'This is the content of the help tooltip associated with the newmodulename field';
+// $string['newmodulesettings'] = 'Settings';
+// $string['now'] = 'No newmodules';
 $string['pluginadministration'] = 'newmodule administration';
 $string['pluginname'] = 'WordPress Sync';
 $string['privacy:metadata'] = 'WordPress Sync does not store any personal data';
 $string['view'] = 'View';
-$string['wordpress_sync:addinstance'] = 'Add Instance of Mod WordPress Sync';
-$string['wordpress_sync:edit'] = 'Edit Instance of Mod WordPress Sync';
-$string['wordpress_sync:view'] = 'View Mod WordPress Sync';
+$string['wordpresssync:addinstance'] = 'Add Instance of Mod WordPress Sync';
+$string['wordpresssync:edit'] = 'Edit Instance of Mod WordPress Sync';
+$string['wordpresssync:view'] = 'View Mod WordPress Sync';

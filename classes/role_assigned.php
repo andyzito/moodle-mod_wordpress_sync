@@ -17,20 +17,20 @@
 /**
  * Plugin observer classes are defined here.
  *
- * @package     mod_wordpress_sync
+ * @package     mod_wordpresssync
  * @category    event
  * @copyright   2018 Lafayette College
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-namespace mod_wordpress_sync;
+namespace mod_wordpresssync;
 
-defined('MOODLE_INTERNAL') || die();
+// defined('MOODLE_INTERNAL') || die();
 
 /**
  * Event observer class.
  *
- * @package    mod_wordpress_sync
+ * @package    mod_wordpresssync
  * @copyright  2018 Lafayette College
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */

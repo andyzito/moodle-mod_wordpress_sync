@@ -15,17 +15,17 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Defines {@link \mod_wordpress_sync\privacy\provider} class.
+ * Defines {@link \mod_wordpresssync\privacy\provider} class.
  *
- * @package     mod_wordpress_sync
+ * @package     mod_wordpresssync
  * @category    privacy
  * @copyright   2018 Lafayette College
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-namespace mod_wordpress_sync\privacy;
+namespace mod_wordpresssync\privacy;
 
-defined('MOODLE_INTERNAL') || die();
+// defined('MOODLE_INTERNAL') || die();
 
 /**
  * Privacy API implementation for the WordPress Sync plugin.

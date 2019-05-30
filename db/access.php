@@ -17,17 +17,17 @@
 /**
  * Plugin capabilities are defined here.
  *
- * @package     mod_wordpress_sync
+ * @package     mod_wordpresssync
  * @category    access
  * @copyright   2018 Lafayette College
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die();
+// defined('MOODLE_INTERNAL') || die();
 
 $capabilities = [
 
-    'mod/wordpress_sync:view' => [
+    'mod/wordpresssync:view' => [
         'captype' => 'read',
         'contextlevel' => CONTEXT_MODULE,
         'archetypes' => [
@@ -37,7 +37,7 @@ $capabilities = [
         'clonepermissionsfrom' => 'moodle/course:view',
     ],
 
-    'mod/wordpress_sync:addinstance' => [
+    'mod/wordpresssync:addinstance' => [
         'riskbitmask' => RISK_XSS,
         'captype' => 'write',
         'contextlevel' => CONTEXT_COURSE,
@@ -48,7 +48,7 @@ $capabilities = [
         'clonepermissionsfrom' => 'moodle/course:edit',
     ],
 
-    'mod/wordpress_sync:edit' => [
+    'mod/wordpresssync:edit' => [
         'captype' => 'write',
         'contextlevel' => CONTEXT_COURSE,
         'archetypes' => [

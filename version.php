@@ -17,15 +17,15 @@
 /**
  * Plugin version and other meta-data are defined here.
  *
- * @package     mod_wordpress_sync
+ * @package     mod_wordpresssync
  * @copyright   2018 Lafayette College
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die();
+// defined('MOODLE_INTERNAL') || die();
 
-$plugin->component = 'mod_wordpress_sync';
+$plugin->component = 'mod_wordpresssync';
 $plugin->release = '0.0.0';
 $plugin->version = 2018110500;
-$plugin->requires = 2018051700;
+$plugin->requires = 2017051700;
 $plugin->maturity = MATURITY_ALPHA;

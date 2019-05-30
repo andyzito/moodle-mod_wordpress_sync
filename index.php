@@ -15,9 +15,9 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Display information about all the mod_wordpress_sync modules in the requested course.
+ * Display information about all the mod_wordpresssync modules in the requested course.
  *
- * @package     mod_wordpress_sync
+ * @package     mod_wordpresssync
  * @copyright   2018 Lafayette College
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -33,26 +33,26 @@ require_course_login($course);
 
 $coursecontext = context_course::instance($course->id);
 
-$event = \mod_wordpress_sync\event\course_module_instance_list_viewed::create(array(
+$event = \mod_wordpresssync\event\course_module_instance_list_viewed::create(array(
     'context' => $modulecontext
 ));
 $event->add_record_snapshot('course', $course);
 $event->trigger();
 
-$PAGE->set_url('/mod/wordpress_sync/index.php', array('id' => $id));
+$PAGE->set_url('/mod/wordpresssync/index.php', array('id' => $id));
 $PAGE->set_title(format_string($course->fullname));
 $PAGE->set_heading(format_string($course->fullname));
 $PAGE->set_context($coursecontext);
 
 echo $OUTPUT->header();
 
-$modulenameplural = get_string('modulenameplural', 'mod_wordpress_sync');
+$modulenameplural = get_string('modulenameplural', 'mod_wordpresssync');
 echo $OUTPUT->heading($modulenameplural);
 
-$wordpress_syncs = get_all_instances_in_course('wordpress_sync', $course);
+$wordpresssyncs = get_all_instances_in_course('wordpresssync', $course);
 
-if (empty($wordpress_syncs)) {
-    notice(get_string('nonewmodules', 'mod_wordpress_sync'), new moodle_url('/course/view.php', array('id' => $course->id)));
+if (empty($wordpresssyncs)) {
+    notice(get_string('nonewmodules', 'mod_wordpresssync'), new moodle_url('/course/view.php', array('id' => $course->id)));
 }
 
 $table = new html_table();
@@ -69,20 +69,20 @@ if ($course->format == 'weeks') {
     $table->align = array('left', 'left', 'left');
 }
 
-foreach ($wordpress_syncs as $wordpress_sync) {
-    if (!$wordpress_sync->visible) {
+foreach ($wordpresssyncs as $wordpresssync) {
+    if (!$wordpresssync->visible) {
         $link = html_writer::link(
-            new moodle_url('/mod/wordpress_sync/view.php', array('id' => $wordpress_sync->coursemodule)),
-            format_string($wordpress_sync->name, true),
+            new moodle_url('/mod/wordpresssync/view.php', array('id' => $wordpresssync->coursemodule)),
+            format_string($wordpresssync->name, true),
             array('class' => 'dimmed'));
     } else {
         $link = html_writer::link(
-            new moodle_url('/mod/wordpress_sync/view.php', array('id' => $wordpress_sync->coursemodule)),
-            format_string($wordpress_sync->name, true));
+            new moodle_url('/mod/wordpresssync/view.php', array('id' => $wordpresssync->coursemodule)),
+            format_string($wordpresssync->name, true));
     }
 
     if ($course->format == 'weeks' or $course->format == 'topics') {
-        $table->data[] = array($wordpress_sync->section, $link);
+        $table->data[] = array($wordpresssync->section, $link);
     } else {
         $table->data[] = array($link);
     }

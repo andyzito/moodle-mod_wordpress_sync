@@ -17,12 +17,16 @@
 /**
  * Library of interface functions and constants.
  *
- * @package     mod_wordpress_sync
+ * @package     mod_wordpresssync
  * @copyright   2018 Lafayette College
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die();
+// defined('MOODLE_INTERNAL') || die();
+
+define('MOD_WPSYNC_COURSE_END_BEHAVIOR_DO_NOTHING', 0);
+define('MOD_WPSYNC_COURSE_END_BEHAVIOR_ARCHIVE', 1);
+define('MOD_WPSYNC_COURSE_END_BEHAVIOR_DELETE', 2);
 
 /**
  * Return if the plugin supports $feature.
@@ -30,7 +34,7 @@ defined('MOODLE_INTERNAL') || die();
  * @param string $feature Constant representing the feature.
  * @return true | null True if the feature is supported, null otherwise.
  */
-function mod_wordpress_sync_supports($feature) {
+function mod_wordpresssync_supports($feature) {
     switch ($feature) {
         case FEATURE_MOD_INTRO:
             return true;
@@ -40,60 +44,60 @@ function mod_wordpress_sync_supports($feature) {
 }
 
 /**
- * Saves a new instance of the mod_wordpress_sync into the database.
+ * Saves a new instance of the mod_wordpresssync into the database.
  *
  * Given an object containing all the necessary data, (defined by the form
  * in mod_form.php) this function will create a new instance and return the id
  * number of the instance.
  *
  * @param object $moduleinstance An object from the form.
- * @param mod_wordpress_sync_mod_form $mform The form.
+ * @param mod_wordpresssync_mod_form $mform The form.
  * @return int The id of the newly inserted record.
  */
-function mod_wordpress_sync_add_instance($moduleinstance, $mform = null) {
+function mod_wordpresssync_add_instance($moduleinstance, $mform = null) {
     global $DB;
 
     $moduleinstance->timecreated = time();
 
-    $id = $DB->insert_record('mod_wordpress_sync', $moduleinstance);
+    $id = $DB->insert_record('mod_wordpresssync', $moduleinstance);
 
     return $id;
 }
 
 /**
- * Updates an instance of the mod_wordpress_sync in the database.
+ * Updates an instance of the mod_wordpresssync in the database.
  *
  * Given an object containing all the necessary data (defined in mod_form.php),
  * this function will update an existing instance with new data.
  *
  * @param object $moduleinstance An object from the form in mod_form.php.
- * @param mod_wordpress_sync_mod_form $mform The form.
+ * @param mod_wordpresssync_mod_form $mform The form.
  * @return bool True if successful, false otherwise.
  */
-function mod_wordpress_sync_update_instance($moduleinstance, $mform = null) {
+function mod_wordpresssync_update_instance($moduleinstance, $mform = null) {
     global $DB;
 
     $moduleinstance->timemodified = time();
     $moduleinstance->id = $moduleinstance->instance;
 
-    return $DB->update_record('mod_wordpress_sync', $moduleinstance);
+    return $DB->update_record('mod_wordpresssync', $moduleinstance);
 }
 
 /**
- * Removes an instance of the mod_wordpress_sync from the database.
+ * Removes an instance of the mod_wordpresssync from the database.
  *
  * @param int $id Id of the module instance.
  * @return bool True if successful, false on failure.
  */
-function mod_wordpress_sync_delete_instance($id) {
+function mod_wordpresssync_delete_instance($id) {
     global $DB;
 
-    $exists = $DB->get_record('mod_wordpress_sync', array('id' => $id));
+    $exists = $DB->get_record('mod_wordpresssync', array('id' => $id));
     if (!$exists) {
         return false;
     }
 
-    $DB->delete_records('mod_wordpress_sync', array('id' => $id));
+    $DB->delete_records('mod_wordpresssync', array('id' => $id));
 
     return true;
 }

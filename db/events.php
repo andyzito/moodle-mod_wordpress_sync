@@ -17,13 +17,13 @@
 /**
  * Plugin event observers are registered here.
  *
- * @package     mod_wordpress_sync
+ * @package     mod_wordpresssync
  * @category    event
  * @copyright   2018 Lafayette College
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die();
+// defined('MOODLE_INTERNAL') || die();
 
 // For more information about the Events API, please visit:
 // https://docs.moodle.org/dev/Event_2
@@ -32,14 +32,14 @@ $observers = array(
 
     array(
         'eventname' => '\core\event\role_assigned',
-        'callback' => '\mod_wordpress_sync\role_assigned::role_assigned',
+        'callback' => '\mod_wordpresssync\role_assigned::role_assigned',
         'priority' => 200,
         'internal' => true,
     ),
 
     array(
         'eventname' => '\core\event\role_unassigned',
-        'callback' => '\mod_wordpress_sync\role_unassigned::role_unassigned',
+        'callback' => '\mod_wordpresssync\role_unassigned::role_unassigned',
         'internal' => false,
     ),
 );
